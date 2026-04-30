@@ -1,5 +1,5 @@
 @BatchModule
-Feature: Program Batch module for LMS API
+Feature: Validate Batch Module
 
 
   Scenario Outline: Check if Admin is able to create batch with valid batch name and description

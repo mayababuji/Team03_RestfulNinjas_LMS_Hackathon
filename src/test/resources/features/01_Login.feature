@@ -1,5 +1,5 @@
 @LoginModule
-Feature: Verify User Login Controller
+Feature: Validate User Login Module
 
 
   Scenario Outline: Verify User Sign In with No Auth

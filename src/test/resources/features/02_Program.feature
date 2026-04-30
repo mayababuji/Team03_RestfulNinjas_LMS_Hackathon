@@ -1,5 +1,5 @@
 @programmodule
-Feature: Program
+Feature: Validate Program Module
 
 
   Scenario Outline: Verify if admin is able to create a Program
