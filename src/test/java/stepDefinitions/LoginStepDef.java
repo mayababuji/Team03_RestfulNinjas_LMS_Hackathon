@@ -28,7 +28,7 @@ public class LoginStepDef extends SharedTestData {
     @Given("Admin has the test data for {string} from Excel with No Auth")
     public void admin_has_the_test_data_for_from_excel_with_no_auth(String scenarioName) throws IOException {
 
-        testData = ExcelReader.readExcelData("AdminLogin", scenarioName);
+        testData = ExcelReader.readExcelData("Login", scenarioName);
 
         String requestBody = testData.get("Body");
 
@@ -43,8 +43,8 @@ public class LoginStepDef extends SharedTestData {
                 .body(requestBody);
     }
 
-    @When("Admin sends the post request for User Sign In")
-    public void admin_sends_the_post_request_for_user_sign_in() {
+    @When("Admin sends the post request for  Sign In")
+    public void admin_sends_the_post_request_for_sign_in() {
 
         String endpoint = testData.get("Endpoint");
 
@@ -52,15 +52,15 @@ public class LoginStepDef extends SharedTestData {
         System.out.println(ConfigReader.get("base.url") + endpoint);
         System.out.println("========================\n");
 
-        if (testData.get("ScenarioName").contains("Postrequest_InvalidContenttype")) {
+        if (testData.get("ScenarioName").contains("InvalidContentType")) {
             requestSpec.contentType("text/plain");
         }
 
         response = requestSpec.when().post(endpoint);
     }
 
-    @Then("Admin should receive the status code as defined in Excel")
-    public void admin_should_receive_the_status_code_as_defined_in_excel() {
+    @Then("Admin should receive the status code as  in Excel")
+    public void admin_should_receive_the_status_code_as_in_excel() {
 
         int expectedStatusCode = Integer.parseInt(testData.get("ExpectedStatusCode"));
         String scenarioName = testData.get("ScenarioName");
@@ -76,7 +76,7 @@ public class LoginStepDef extends SharedTestData {
 
             // Only validate schema + token for valid login
             if (response.getStatusCode() == 200 &&
-                    "Postrequest_Valid credential".equals(scenarioName.trim())) {
+                    "Valid credential".equals(scenarioName.trim())) {
 
                 response.then().assertThat()
                         .body(matchesJsonSchemaInClasspath("schemas/Login/UserSignInSchema.json"));
