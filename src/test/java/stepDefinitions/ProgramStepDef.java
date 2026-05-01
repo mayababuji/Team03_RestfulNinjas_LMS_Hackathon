@@ -1,7 +1,7 @@
 package stepDefinitions;
 
-import dtoRequest.CreateProgramRequest;
-import dtoResponse.CreateProgramResponse;
+import pojo.CreateProgramRequest;
+import pojo.CreateProgramResponse;
 import httpRequest.ProgramRequestParser;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -21,8 +21,9 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.testng.Assert.assertTrue;
 
-public class ProgramStepDef  extends SharedTestData {
-    private static RequestSpecification requestSpec;
+public class ProgramStepDef extends SharedTestData {
+
+    private RequestSpecification requestSpec;
     private Map<String, String> data;
     private Response response;
     private static CreateProgramRequest programInput;
@@ -31,37 +32,39 @@ public class ProgramStepDef  extends SharedTestData {
     public void admin_has_a_valid_authorization_token_set() {
         requestSpec = RequestSpec.getRequestSpec();
     }
+
     @When("Admin sends POST request to create program with different payload for {string} from dataSheet")
     public void admin_sends_post_request_to_create_program_with_different_payload_for_from_data_sheet(
             String scenarioNameFromFeature) throws IOException {
 
         data = ExcelReader.readExcelData("Program", scenarioNameFromFeature);
 
-        if (data != null) {
-            String dataSheetTestName = data.get("ScenarioName");
-            if (scenarioNameFromFeature.equalsIgnoreCase(dataSheetTestName)) {
-                programInput = ProgramRequestParser.createProgramParseData(data.get("Body"));
-
-                requestSpec = given().spec(requestSpec).body(programInput);
-                // Generate unique programName
-                String baseName = programInput.getProgramName();
-                String randomSuffix = RandomStringUtils.randomAlphabetic(5);
-                String uniqueProgramName = baseName + randomSuffix;
-                programInput.setProgramName(uniqueProgramName);
-
-                // Store globally in SharedTestData for Batch creation
-                SharedTestData.programName = uniqueProgramName;
-
-                requestSpec = given().spec(requestSpec).body(programInput);
-                String httpMethod = data.get("Method");
-                String endPoint = data.get("Endpoint");
-
-                response = requestSpec.log().all().when().request(httpMethod, endPoint).then().log().all().extract()
-                        .response();
-            }
-        } else {
+        if (data == null) {
             throw new RuntimeException("Test data not found for: " + scenarioNameFromFeature);
         }
+
+        if (!scenarioNameFromFeature.equalsIgnoreCase(data.get("ScenarioName"))) {
+            return; // scenario mismatch, skip
+        }
+
+        // Parse request body
+        programInput = ProgramRequestParser.createProgramParseData(data.get("Body"));
+
+        // Generate unique program name
+        String uniqueProgramName = programInput.getProgramName() + RandomStringUtils.randomAlphabetic(5);
+        programInput.setProgramName(uniqueProgramName);
+
+        // Store globally for Batch creation
+        SharedTestData.programName = uniqueProgramName;
+
+        // Build request
+        requestSpec = given().spec(requestSpec).body(programInput);
+
+        // Send request
+        response = requestSpec.log().all()
+                .when().request(data.get("Method"), data.get("Endpoint"))
+                .then().log().all()
+                .extract().response();
     }
 
     @Then("Admin verifies the response payload with expected output from the data sheet")
@@ -69,45 +72,52 @@ public class ProgramStepDef  extends SharedTestData {
 
         int expectedStatus = Integer.parseInt(data.get("ExpectedStatusCode"));
         response.then().log().all().statusCode(expectedStatus);
-        if (expectedStatus == 201) {
 
-            response.then().log().all().assertThat()
-                    .body(matchesJsonSchemaInClasspath("schemas/Program/CreateProgramSchema.json"));
+        if (expectedStatus != 201) {
+            handleNegativeStatus(expectedStatus);
+            return;
+        }
 
+        // Schema validation
+        response.then().assertThat()
+                .body(matchesJsonSchemaInClasspath("schemas/Program/CreateProgramSchema.json"));
 
-            CreateProgramResponse actualResponse = response.as(CreateProgramResponse.class);
-            String programName = actualResponse.getProgramName();
-            SharedTestData.programName = programName;
-            SharedTestData.programNameList.add(programName);
+        // Deserialize response
+        CreateProgramResponse actualResponse = response.as(CreateProgramResponse.class);
 
-            if (SharedTestData.programId == 0) {
-                SharedTestData.programId = actualResponse.getProgramId();
-            } else {
-                SharedTestData.programIdList.add(actualResponse.getProgramId());
-            }
+        // Store programName & programId globally
+        SharedTestData.programName = actualResponse.getProgramName();
+        SharedTestData.programNameList.add(actualResponse.getProgramName());
 
-            Assert.assertEquals(actualResponse.getProgramDescription(), programInput.getProgramDescription(),
-                    "ProgramDescription is not matching");
-            Assert.assertEquals(actualResponse.getProgramName(), programInput.getProgramName(),
-                    "ProgramName is not matching");
-            int createdProgramId = actualResponse.getProgramId();
-            assertTrue(createdProgramId > 0, "ProgramId should not be negative value");
+        if (SharedTestData.programId == 0) {
+            SharedTestData.programId = actualResponse.getProgramId();
         } else {
-            switch (expectedStatus) {
+            SharedTestData.programIdList.add(actualResponse.getProgramId());
+        }
 
-                case 400:
-                    String badReq = response.jsonPath().getString("message");
-                    Assert.assertNotNull(badReq, "Bad request ");
-                    break;
-                case 404:
-                    break;
-                case 405:
-                    String methodNotAllowed = response.jsonPath().getString("error");
-                    Assert.assertEquals(methodNotAllowed, "Method Not Allowed");
-                    break;
-                default:
-                    break;
-            }
+        // Field validations
+        Assert.assertEquals(actualResponse.getProgramDescription(), programInput.getProgramDescription(),
+                "ProgramDescription is not matching");
+
+        Assert.assertEquals(actualResponse.getProgramName(), programInput.getProgramName(),
+                "ProgramName is not matching");
+
+        assertTrue(actualResponse.getProgramId() > 0, "ProgramId should not be negative value");
+    }
+
+    private void handleNegativeStatus(int expectedStatus) {
+        switch (expectedStatus) {
+            case 400:
+                Assert.assertNotNull(response.jsonPath().getString("message"), "Bad request");
+                break;
+
+            case 405:
+                Assert.assertEquals(response.jsonPath().getString("error"), "Method Not Allowed");
+                break;
+
+            case 404:
+            default:
+                break;
         }
     }
 }

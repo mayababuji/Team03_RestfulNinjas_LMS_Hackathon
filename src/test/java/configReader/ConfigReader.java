@@ -5,11 +5,12 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-    private static Properties properties = new Properties();
+    private static final Properties properties = new Properties();
 
     static {
-        try {
-            InputStream input = ConfigReader.class.getClassLoader().getResourceAsStream("env.properties");
+        try (InputStream input = ConfigReader.class.getClassLoader()
+                .getResourceAsStream("env.properties")) {
+
             if (input == null) {
                 throw new RuntimeException("env.properties not found in src/test/resources");
             }
@@ -17,12 +18,11 @@ public class ConfigReader {
             properties.load(input);
 
         } catch (Exception e) {
-            throw new RuntimeException("Failed to load env.properties");
+            throw new RuntimeException("Failed to load env.properties", e);
         }
     }
 
     public static String get(String key) {
         return properties.getProperty(key);
     }
-
 }

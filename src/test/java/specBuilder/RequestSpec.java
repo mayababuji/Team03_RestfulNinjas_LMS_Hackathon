@@ -1,16 +1,15 @@
 package specBuilder;
 
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.specification.RequestSpecification;
+import configReader.ConfigReader;
+import utils.SharedTestData;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
-
-
-import configReader.ConfigReader;
-import utils.SharedTestData;
 
 public class RequestSpec {
 
@@ -18,50 +17,55 @@ public class RequestSpec {
 
     public static RequestSpecification getRequestSpec() {
         initializeLogStream();
-        String currentToken = SharedTestData.token;
-        return new io.restassured.builder.RequestSpecBuilder().setBaseUri(ConfigReader.get("base.url"))
-                .addHeader("Authorization", "Bearer " + currentToken).addHeader("Content-Type", "application/json")
-                .addFilter(RequestLoggingFilter.logRequestTo(logStream))
-                .addFilter(ResponseLoggingFilter.logResponseTo(logStream)).build();
+        return baseBuilder()
+                .addHeader("Authorization", "Bearer " + SharedTestData.token)
+                .build();
     }
 
     public static RequestSpecification getRequestSpecWithoutAuth() {
         initializeLogStream();
-        return new io.restassured.builder.RequestSpecBuilder().setBaseUri(ConfigReader.get("base.url"))
-                .addHeader("Content-Type", "application/json").addFilter(RequestLoggingFilter.logRequestTo(logStream))
-                .addFilter(ResponseLoggingFilter.logResponseTo(logStream)).build();
+        return baseBuilder().build();
     }
 
     public static RequestSpecification getRequestSpecWithCustomToken(String customToken) {
         initializeLogStream();
-        return new io.restassured.builder.RequestSpecBuilder().setBaseUri(ConfigReader.get("base.url"))
-                .addHeader("Authorization", "Bearer " + customToken).addHeader("Content-Type", "application/json")
-                .addFilter(RequestLoggingFilter.logRequestTo(logStream))
-                .addFilter(ResponseLoggingFilter.logResponseTo(logStream)).build();
+        return baseBuilder()
+                .addHeader("Authorization", "Bearer " + customToken)
+                .build();
     }
 
     public static RequestSpecification getRequestSpecInvalidAuth() {
         initializeLogStream();
-        return new io.restassured.builder.RequestSpecBuilder().setBaseUri(ConfigReader.get("base.url")).addHeader("Authorization", "Bearer ")
-                .addHeader("Content-Type", "application/json").addFilter(RequestLoggingFilter.logRequestTo(logStream))
-                .addFilter(ResponseLoggingFilter.logResponseTo(logStream)).build();
+        return baseBuilder()
+                .addHeader("Authorization", "Bearer ")
+                .build();
     }
 
-    // Initialize the file stream once
+    private static RequestSpecBuilder baseBuilder() {
+        return new RequestSpecBuilder()
+                .setBaseUri(ConfigReader.get("base.url"))
+                .addHeader("Content-Type", "application/json")
+                .addFilter(RequestLoggingFilter.logRequestTo(logStream))
+                .addFilter(ResponseLoggingFilter.logResponseTo(logStream));
+    }
+
     private static void initializeLogStream() {
-        if (logStream == null) {
-            synchronized (RequestSpec.class) {
-                if (logStream == null) {
-                    try {
-                        String filePath = ConfigReader.get("LogFilePath");
-                        File logFile = new File(filePath);
-                        if (logFile.getParentFile() != null && !logFile.getParentFile().exists()) {
-                            logFile.getParentFile().mkdirs();
-                        }
-                        logStream = new PrintStream(new FileOutputStream(filePath, false));
-                    } catch (Exception e) {
-                        throw new RuntimeException("Failed to initialize log file", e);
+        if (logStream != null) return;
+
+        synchronized (RequestSpec.class) {
+            if (logStream == null) {
+                try {
+                    String filePath = ConfigReader.get("LogFilePath");
+                    File logFile = new File(filePath);
+
+                    if (logFile.getParentFile() != null && !logFile.getParentFile().exists()) {
+                        logFile.getParentFile().mkdirs();
                     }
+
+                    logStream = new PrintStream(new FileOutputStream(filePath, false));
+
+                } catch (Exception e) {
+                    throw new RuntimeException("Failed to initialize log file", e);
                 }
             }
         }
@@ -74,6 +78,4 @@ public class RequestSpec {
         logStream.println("==================================================\n");
         logStream.flush();
     }
-
 }
-

@@ -1,6 +1,7 @@
-package dtoResponse;
+package pojo;
 
 public class CreateBatchResponse {
+
     private int batchId;
     private String batchDescription;
     private String batchName;
@@ -44,11 +45,12 @@ public class CreateBatchResponse {
     public String getBatchStatus() {
         return batchStatus;
     }
+
     public void setBatchStatus(String batchStatus) {
         this.batchStatus = batchStatus;
     }
 
-    public double getProgramId() {
+    public int getProgramId() {
         return programId;
     }
 

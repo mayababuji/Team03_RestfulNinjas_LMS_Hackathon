@@ -1,6 +1,7 @@
-package dtoResponse;
+package pojo;
 
 public class CreateProgramResponse {
+
     private int programId;
     private String programName;
     private String programDescription;
@@ -55,6 +56,4 @@ public class CreateProgramResponse {
     public void setLastModTime(String lastModTime) {
         this.lastModTime = lastModTime;
     }
-
-
 }

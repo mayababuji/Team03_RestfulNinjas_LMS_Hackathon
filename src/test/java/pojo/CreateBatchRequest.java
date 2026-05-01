@@ -1,6 +1,7 @@
-package dtoRequest;
+package pojo;
 
 public class CreateBatchRequest {
+
     private String batchDescription;
     private String batchName;
     private int batchNoOfClasses;

@@ -4,16 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SharedTestData {
-    protected static List<Integer> batchIds = new ArrayList<>();
-    protected static List<Integer> programIdList = new ArrayList<>();
-    protected static List<String> programNameList = new ArrayList<>();
+
+    // Lists to store multiple IDs and names across scenarios
+    protected static final List<Integer> batchIds = new ArrayList<>();
+    protected static final List<Integer> programIdList = new ArrayList<>();
+    protected static final List<String> programNameList = new ArrayList<>();
+
+    // Single-value shared fields
     protected static int batchId;
     protected static String batchName;
     protected static int programId;
     protected static String programName;
+
+    // Auth token shared across tests
     public static String token;
+
     public SharedTestData() {
 
+    }
 
+
+    public static void reset() {
+        batchIds.clear();
+        programIdList.clear();
+        programNameList.clear();
+
+        batchId = 0;
+        batchName = null;
+        programId = 0;
+        programName = null;
+        token = null;
     }
 }
