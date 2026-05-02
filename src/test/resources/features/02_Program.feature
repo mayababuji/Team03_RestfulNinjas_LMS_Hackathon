@@ -9,4 +9,10 @@ Feature: Validate Program Module
 
     Examples:
       | ScenarioName                                                    |
+    |CreateProgram_Invalid_Endpoint                              |
+      | CreateProgram_InvalidMethod                                |
+      | CreateProgram_ProgramName_Less_Than_4_Characters            |
+      | CreateProgram_ProgramName_Greater_Than_25_Characters        |
+      | CreateProgram_ProgramDescription_Less_Than_4_Characters     |
+      | CreateProgram_ProgramDescription_Greater_Than_25_Characters |
       | Create_NewProgram                                               |

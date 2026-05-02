@@ -94,10 +94,81 @@ public class LoginStepDef extends SharedTestData {
 
         String expectedMsg = testData.get("Expectedmessage");
         String actualBody = response.getBody().asString();
+        System.out.println("\n===== expected MSG =====\n");
+        System.out.println(expectedMsg);
+        System.out.println("\n===== expected MSG =====\n");
+        System.out.println("\n===== ACTUAL MSG =====\n");
+        System.out.println(actualBody);
+        System.out.println("\n===== ACTUAL MSG =====\n");
 
         Assert.assertTrue(
                 actualBody.contains(expectedMsg),
                 "\nExpected to find: [" + expectedMsg + "] \nBut returned: [" + actualBody + "]"
         );
+    }
+
+    @When("Admin sends a GET  InvalidMethod")
+    public void admin_sends_a_get_invalid_method() {
+        String endpoint = testData.get("Endpoint");
+        response = requestSpec.when().get(endpoint);
+    }
+
+    @Then("Admin should receive the status code matches with Expected statuscode from excel")
+    public void admin_should_receive_the_status_code_matches_with_expected_statuscode() {
+        int expected = Integer.parseInt(testData.get("ExpectedStatusCode"));
+
+        int actual = response.getStatusCode();
+
+        System.out.println("\n===== expected CODE =====\n");
+        System.out.println(expected);
+        System.out.println("\n===== expected CODE =====\n");
+        System.out.println("\n===== ACTUAL CODE =====\n");
+        System.out.println(actual);
+        System.out.println("\n===== ACTUAL CODE =====\n");
+
+        Assert.assertEquals(actual, expected, "Status Code Mismatch Expected " + expected + " but got " + actual);
+    }
+
+    @When("Admin sends the post request for ForgotPassword")
+    public void admin_sends_the_post_request_for_forgot_password() {
+        String endpoint = testData.get("Endpoint");
+        String scenario = testData.get("ScenarioName");
+        if (testData.get("ScenarioName").contains("ForgotPwd_InvalidContentType")) {
+            requestSpec.contentType("text/plain");
+        }
+        response = requestSpec.when().post(endpoint);
+        if (response.getStatusCode() == 200 && scenario.contains("Valid")) {
+            response.then().assertThat()
+                    .body(matchesJsonSchemaInClasspath("schemas/Login/ForgotPasswordSchema.json"));
+        }
+    }
+
+    @Then("the response should match the expected validation message from excel")
+    public void the_response_should_match_the_expected_validation_message_from_Excel() {
+        String expectedMsg = testData.get("Expectedmessage");
+        String actualBody = response.getBody().asString();
+        Assert.assertTrue(actualBody.contains(expectedMsg),
+                "\nExpected to find: [" + expectedMsg + "] \nBut returned: [" + actualBody + "]");
+    }
+
+
+    @Given("Admin has the test data for {string} from Excel")
+    public void admin_has_the_test_data_for_from_excel(String scenarioName) throws IOException {
+        testData = ExcelReader.readExcelData("Login", scenarioName);
+        RequestSpec.logScenarioName(scenarioName);
+
+        if (scenarioName.equalsIgnoreCase("LogoutWithInvalidToken")) {
+            String excelToken = testData.get("Token");
+
+            requestSpec = given().spec(RequestSpec.getRequestSpecWithCustomToken(excelToken))
+                    .body(testData.get("Body"));
+        } else {
+            requestSpec = given().spec(RequestSpec.getRequestSpec()).body(testData.get("Body"));
+        }
+    }
+    @When("Admin sends GET for logoutInvalidMethod")
+    public void admin_sends_get_for_logout_invalid_method() {
+        String endpoint = testData.get("Endpoint");
+        response = requestSpec.when().post(endpoint);
     }
 }

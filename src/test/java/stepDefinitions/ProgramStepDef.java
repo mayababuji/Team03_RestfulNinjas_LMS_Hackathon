@@ -28,6 +28,7 @@ public class ProgramStepDef extends SharedTestData {
     private Response response;
     private static CreateProgramRequest programInput;
 
+
     @Given("Admin has a valid authorization token set")
     public void admin_has_a_valid_authorization_token_set() {
         requestSpec = RequestSpec.getRequestSpec();
@@ -35,15 +36,15 @@ public class ProgramStepDef extends SharedTestData {
 
     @When("Admin sends POST request to create program with different payload for {string} from dataSheet")
     public void admin_sends_post_request_to_create_program_with_different_payload_for_from_data_sheet(
-            String scenarioNameFromFeature) throws IOException {
+            String scenarioNameFeature) throws IOException {
 
-        data = ExcelReader.readExcelData("Program", scenarioNameFromFeature);
+        data = ExcelReader.readExcelData("Program", scenarioNameFeature);
 
         if (data == null) {
-            throw new RuntimeException("Test data not found for: " + scenarioNameFromFeature);
+            throw new RuntimeException("Test data not found for: " + scenarioNameFeature);
         }
 
-        if (!scenarioNameFromFeature.equalsIgnoreCase(data.get("ScenarioName"))) {
+        if (!scenarioNameFeature.equalsIgnoreCase(data.get("ScenarioName"))) {
             return; // scenario mismatch, skip
         }
 
@@ -51,7 +52,7 @@ public class ProgramStepDef extends SharedTestData {
         programInput = ProgramRequestParser.createProgramParseData(data.get("Body"));
 
         // Generate unique program name
-        String uniqueProgramName = programInput.getProgramName() + RandomStringUtils.randomAlphabetic(5);
+        String uniqueProgramName = programInput.getProgramName() + RandomStringUtils.randomAlphabetic(2);
         programInput.setProgramName(uniqueProgramName);
 
         // Store globally for Batch creation
@@ -74,7 +75,7 @@ public class ProgramStepDef extends SharedTestData {
         response.then().log().all().statusCode(expectedStatus);
 
         if (expectedStatus != 201) {
-            handleNegativeStatus(expectedStatus);
+            validateStatus(expectedStatus);
             return;
         }
 
@@ -105,14 +106,32 @@ public class ProgramStepDef extends SharedTestData {
         assertTrue(actualResponse.getProgramId() > 0, "ProgramId should not be negative value");
     }
 
-    private void handleNegativeStatus(int expectedStatus) {
+    private void validateStatus(int expectedStatus) {
+
+        String expectedMsg = data.get("ExpectedMessage");
         switch (expectedStatus) {
             case 400:
-                Assert.assertNotNull(response.jsonPath().getString("message"), "Bad request");
+                String message = response.jsonPath().getString("message");
+
+                if (message != null) {
+                    // { "message": "..." }
+                    Assert.assertEquals(message, expectedMsg);
+                } else {
+                    //  {{ "programName": "..."} or { "programDescription": "..." }
+                    Map<String, String> bodyMap = response.jsonPath().getMap("");
+                    String firstValue = bodyMap.values().iterator().next();
+                    System.out.println("firstValuefirstValuefirstValue");
+                    System.out.println(firstValue);
+                    System.out.println("firstValuefirstValuefirstValue");
+                    System.out.println("expectedMsg");
+                    System.out.println(expectedMsg);
+                    System.out.println("expectedMsg");
+                    Assert.assertEquals(firstValue, expectedMsg);
+                }
                 break;
 
             case 405:
-                Assert.assertEquals(response.jsonPath().getString("error"), "Method Not Allowed");
+                Assert.assertEquals(response.jsonPath().getString("message"), expectedMsg);
                 break;
 
             case 404:
