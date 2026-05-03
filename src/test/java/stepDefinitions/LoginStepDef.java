@@ -32,9 +32,7 @@ public class LoginStepDef extends SharedTestData {
 
         String requestBody = testData.get("Body");
 
-        System.out.println("\n===== REQUEST BODY SENT TO API =====\n" +
-                requestBody +
-                "\n====================================\n");
+        System.out.println(requestBody);
 
         RequestSpec.logScenarioName(scenarioName);
 
@@ -48,9 +46,7 @@ public class LoginStepDef extends SharedTestData {
 
         String endpoint = testData.get("Endpoint");
 
-        System.out.println("\n===== ENDPOINT URL =====");
         System.out.println(ConfigReader.get("base.url") + endpoint);
-        System.out.println("========================\n");
 
         if (testData.get("ScenarioName").contains("InvalidContentType")) {
             requestSpec.contentType("text/plain");
@@ -84,22 +80,33 @@ public class LoginStepDef extends SharedTestData {
                 String capturedToken = response.jsonPath().getString("token");
                 if (capturedToken != null) {
                     token = capturedToken;
+                } 
+           /* if (response.getStatusCode() == 200) {
+
+                // Save token for ALL successful logins
+                String capturedToken = response.jsonPath().getString("token");
+                if (capturedToken != null && !capturedToken.isEmpty()) {
+                    SharedTestData.token = capturedToken;
                 }
+
+                // Schema validation only for valid login scenario
+                if ("Valid credential".equalsIgnoreCase(scenarioName.trim())) {
+                    response.then().assertThat()
+                            .body(matchesJsonSchemaInClasspath("schemas/Login/UserSignInSchema.json"));
+                }
+            }*/
+
             }
         }
-    }
+        }
 
     @Then("the response should match the expected validation message from Excel")
     public void the_response_should_match_the_expected_validation_message_from_excel() {
 
         String expectedMsg = testData.get("Expectedmessage");
         String actualBody = response.getBody().asString();
-        System.out.println("\n===== expected MSG =====\n");
         System.out.println(expectedMsg);
-        System.out.println("\n===== expected MSG =====\n");
-        System.out.println("\n===== ACTUAL MSG =====\n");
         System.out.println(actualBody);
-        System.out.println("\n===== ACTUAL MSG =====\n");
 
         Assert.assertTrue(
                 actualBody.contains(expectedMsg),

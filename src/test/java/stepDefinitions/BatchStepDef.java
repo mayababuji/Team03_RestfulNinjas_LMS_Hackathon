@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -31,17 +30,23 @@ public class BatchStepDef extends SharedTestData {
         this.scenarioContext = scenarioContext;
     }
 
-    @Given("Admin create POST request with valid data for {string} from excel sheet")
-    public void admin_create_post_request_with_valid_data_for_from_excel_sheet(String scenario) throws IOException {
-
+    @Given("Admin creates POST batch data for {string} from excel sheet")
+    public void admin_creates_post_batch_data_for_from_excel_sheet(String scenario) throws IOException {
+        
         data = ExcelReader.readExcelData("Batch", scenario);
 
         // Parse request body
-        CreateBatchRequest batchData = new ObjectMapper()
-                .readValue(data.get("Body"), CreateBatchRequest.class);
+        CreateBatchRequest batchData = new CreateBatchRequest();
+        
+        batchData.setBatchDescription(data.get("batchDescription"));
+        batchData.setBatchStatus(data.get("batchStatus"));
+        //batchData.setBatchNoOfClasses(Integer.parseInt(data.get("batchNoOfClasses")));
+        batchData.setBatchNoOfClasses(Integer.parseInt(data.get("batchNoOfClasses")));
+
 
         // Inject programId from SharedTestData
         batchData.setProgramId(SharedTestData.programId);
+        //batchData.setProgramName(SharedTestData.programName);
 
         // Auto-generate batchName
         String batchName = SharedTestData.programName + "_01";
@@ -58,16 +63,16 @@ public class BatchStepDef extends SharedTestData {
         scenarioContext.setContext("BATCH_NAME", batchData.getBatchName());
     }
 
-    @When("Admin sends POST request to create program batch")
-    public void admin_sends_post_request_to_create_program_batch() {
+    @When("Admin sends HTTPS request to the endpoint")
+    public void admin_sends_https_request_to_the_endpoint() {
         response = requestSpec.when().log().all().post();
     }
 
-    @Then("Admin receives created status with response body")
-    public void admin_receives_created_status_with_response_body() {
+    @Then("Admin receives expected status code from excel, validate POST batch response")
+    public void admin_receives_expected_status_code_from_excel_validate_post_batch_response() {
 
         response.then().log().all()
-                .statusCode(Integer.parseInt(data.get("ExpectedStatusCode")))
+                .statusCode(Integer.parseInt(data.get("expectedStatus")))
                 .body(matchesJsonSchemaInClasspath("schemas/batch/CreateBatchSchema.json"));
 
         CreateBatchResponse batchResponse = response.as(CreateBatchResponse.class);

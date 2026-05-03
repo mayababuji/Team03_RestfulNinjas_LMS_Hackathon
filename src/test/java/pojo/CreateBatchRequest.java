@@ -7,6 +7,7 @@ public class CreateBatchRequest {
     private int batchNoOfClasses;
     private String batchStatus;
     private double programId;
+    private String programName;
 
     public String getBatchDescription() {
         return batchDescription;
@@ -46,5 +47,13 @@ public class CreateBatchRequest {
 
     public void setProgramId(double programId) {
         this.programId = programId;
+    }
+    
+    public String getprogramName() {
+        return programName;
+    }
+
+    public void setprogramName(String programName) {
+        this.programName = programName;
     }
 }
