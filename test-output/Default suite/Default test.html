@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>29/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>51/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat May 02 22:49:01 PDT 2026</td>
+<td>Started on:</td><td>Mon May 04 01:51:23 PDT 2026</td>
 </tr>
-<tr><td>Total time:</td><td>21 seconds (21781 ms)</td>
+<tr><td>Total time:</td><td>32 seconds (32348 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,27 +76,107 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
-<td><div><pre>java.lang.AssertionError: 
-Expected to find: [password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space] 
-But returned: [{&quot;password&quot;:&quot;Password is mandatory&quot;,&quot;userLoginEmailId&quot;:&quot;EmailId is mandatory&quot;}] expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1590)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at stepDefinitions.LoginStepDef.the_response_should_match_the_expected_validation_message_from_excel(LoginStepDef.java:111)
-	at ✽.the response should match the expected validation message from Excel(file:///C:/Users/saphi/eclipse-workspace/Team03_RestfulNinjas_LMS_Hackathon/src/test/resources/features/TC01_Login.feature:9)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1340714491", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1340714491'><pre>java.lang.AssertionError: 
-Expected to find: [password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space] 
-But returned: [{&quot;password&quot;:&quot;Password is mandatory&quot;,&quot;userLoginEmailId&quot;:&quot;EmailId is mandatory&quot;}] expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1590)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at stepDefinitions.LoginStepDef.the_response_should_match_the_expected_validation_message_from_excel(LoginStepDef.java:111)
-	at ✽.the response should match the expected validation message from Excel(file:///C:/Users/saphi/eclipse-workspace/Team03_RestfulNinjas_LMS_Hackathon/src/test/resources/features/TC01_Login.feature:9)
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "BatchName_Too_Short"", "Validate Batch Module"</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;400&gt; but was &lt;201&gt;.
+
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:516)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:714)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:139)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:147)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at stepDefinitions.BatchStepDef.admin_receives_expected_status_code_from_excel_validate_post_batch_response(BatchStepDef.java:288)
+	at ✽.Admin receives expected status code from excel, validate POST batch response(file:///C:/Users/saphi/eclipse-workspace/Team03_RestfulNinjas_LMS_Hackathon/src/test/resources/features/TC03_Batch.feature:10)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1557855053", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1557855053'><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;400&gt; but was &lt;201&gt;.
+
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:516)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:714)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:139)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:147)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at stepDefinitions.BatchStepDef.admin_receives_expected_status_code_from_excel_validate_post_batch_response(BatchStepDef.java:288)
+	at ✽.Admin receives expected status code from excel, validate POST batch response(file:///C:/Users/saphi/eclipse-workspace/Team03_RestfulNinjas_LMS_Hackathon/src/test/resources/features/TC03_Batch.feature:10)
 </pre></div></td>
 <td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Description_Too_Short"", "Validate Batch Module"</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;400&gt; but was &lt;201&gt;.
+
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:516)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:714)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:139)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:147)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at stepDefinitions.BatchStepDef.admin_receives_expected_status_code_from_excel_validate_post_batch_response(BatchStepDef.java:288)
+	at ✽.Admin receives expected status code from excel, validate POST batch response(file:///C:/Users/saphi/eclipse-workspace/Team03_RestfulNinjas_LMS_Hackathon/src/test/resources/features/TC03_Batch.feature:10)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1469906116", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1469906116'><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;400&gt; but was &lt;201&gt;.
+
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:516)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:714)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:139)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:147)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at stepDefinitions.BatchStepDef.admin_receives_expected_status_code_from_excel_validate_post_batch_response(BatchStepDef.java:288)
+	at ✽.Admin receives expected status code from excel, validate POST batch response(file:///C:/Users/saphi/eclipse-workspace/Team03_RestfulNinjas_LMS_Hackathon/src/test/resources/features/TC03_Batch.feature:10)
+</pre></div></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Description_Too_Long"", "Validate Batch Module"</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;400&gt; but was &lt;201&gt;.
+
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:516)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:714)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:139)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:147)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at stepDefinitions.BatchStepDef.admin_receives_expected_status_code_from_excel_validate_post_batch_response(BatchStepDef.java:288)
+	at ✽.Admin receives expected status code from excel, validate POST batch response(file:///C:/Users/saphi/eclipse-workspace/Team03_RestfulNinjas_LMS_Hackathon/src/test/resources/features/TC03_Batch.feature:10)
+</pre></div><a href='#' onClick='toggleBox("stack-trace466989512", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace466989512'><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;400&gt; but was &lt;201&gt;.
+
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:516)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:714)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:139)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:344)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:147)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at stepDefinitions.BatchStepDef.admin_receives_expected_status_code_from_excel_validate_post_batch_response(BatchStepDef.java:288)
+	at ✽.Admin receives expected status code from excel, validate POST batch response(file:///C:/Users/saphi/eclipse-workspace/Team03_RestfulNinjas_LMS_Hackathon/src/test/resources/features/TC03_Batch.feature:10)
+</pre></div></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -107,150 +187,260 @@ But returned: [{&quot;password&quot;:&quot;Password is mandatory&quot;,&quot;use
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Classes_NonNumeric"", "Validate Batch Module"</td>
 <td></td>
 <td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Forgot Password functionality", "Validate User Login Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Status_Special"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Forgot Password functionality", "Validate User Login Module"</td>
 <td></td>
 <td>1</td>
-<td>runner.TestRunner@70325e14</td></tr>
+<td>runner.TestRunner@55b0dcab</td></tr>
 <tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "No_Authorization"", "Validate Batch Module"</td>
 <td></td>
 <td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
+<td>runner.TestRunner@55b0dcab</td></tr>
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify logout with Invalid Method", "Validate User Login Module"</td>
 <td></td>
 <td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify login with Invalid Method", "Validate User Login Module"</td>
-<td></td>
-<td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
-<td></td>
-<td>1</td>
-<td>runner.TestRunner@70325e14</td></tr>
+<td>runner.TestRunner@55b0dcab</td></tr>
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
 <td></td>
 <td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if admin is able to create a Program", "Validate Program Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
 <td></td>
 <td>3</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
-<td></td>
-<td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if admin is able to create a Program", "Validate Program Module"</td>
-<td></td>
-<td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
-<td></td>
-<td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if admin is able to create a Program", "Validate Program Module"</td>
-<td></td>
-<td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
-<td></td>
-<td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
+<td>runner.TestRunner@55b0dcab</td></tr>
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Forgot Password functionality", "Validate User Login Module"</td>
 <td></td>
 <td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Invalid_Method"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Optional_Only_Fields"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "BatchName_Too_Long"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Forgot Password functionality", "Validate User Login Module"</td>
 <td></td>
 <td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
+<td>runner.TestRunner@55b0dcab</td></tr>
 <tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify admin creates batch with both mandatory and optional fields", "Validate Batch Module"</td>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "BatchName_Duplicate"", "Validate Batch Module"</td>
 <td></td>
 <td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "BatchName_Hyphen"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "BatchName_No_Underscore"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Forgot Password functionality", "Validate User Login Module"</td>
 <td></td>
 <td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if admin is able to create a Program", "Validate Program Module"</td>
-<td></td>
-<td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if admin is able to create a Program", "Validate Program Module"</td>
-<td></td>
-<td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if admin is able to create a Program", "Validate Program Module"</td>
-<td></td>
-<td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
-<td></td>
-<td>1</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
-<td></td>
-<td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
-<td></td>
-<td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
-<td></td>
-<td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if admin is able to create a Program", "Validate Program Module"</td>
-<td></td>
-<td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
-<td></td>
-<td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
+<td>runner.TestRunner@55b0dcab</td></tr>
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Forgot Password functionality", "Validate User Login Module"</td>
 <td></td>
 <td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
+<td>runner.TestRunner@55b0dcab</td></tr>
 <tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Forgot Password functionality", "Validate User Login Module"</td>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
 <td></td>
 <td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Mandatory_Optional_Fields"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if admin is able to create a Program", "Validate Program Module"</td>
 <td></td>
 <td>0</td>
-<td>runner.TestRunner@70325e14</td></tr>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "BatchName_Special_Suffix"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Status_Random_Chars"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Status_Numbers"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "ProgramId_NotExist"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Classes_Too_Large"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Invalid_ContentType"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Classes_Too_Small"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if admin is able to create a Program", "Validate Program Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if admin is able to create a Program", "Validate Program Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "BatchName_Char_Suffix"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Invalid_Endpoint"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Inactive_ProgramId"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if admin is able to create a Program", "Validate Program Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "ProgramName_Mismatch"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if admin is able to create a Program", "Validate Program Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if admin is able to create a Program", "Validate Program Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify User Sign In with No Auth", "Validate User Login Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Batch scenario "Mandatory_Only_Fields"", "Validate Batch Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify login with Invalid Method", "Validate User Login Module"</td>
+<td></td>
+<td>0</td>
+<td>runner.TestRunner@55b0dcab</td></tr>
 </table><p>
 </body>
 </html>

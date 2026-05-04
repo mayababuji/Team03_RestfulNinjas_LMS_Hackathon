@@ -4,9 +4,9 @@ public class CreateBatchRequest {
 
     private String batchDescription;
     private String batchName;
-    private int batchNoOfClasses;
+    private Integer batchNoOfClasses;
     private String batchStatus;
-    private double programId;
+    private Integer programId;
     private String programName;
 
     public String getBatchDescription() {
@@ -25,11 +25,11 @@ public class CreateBatchRequest {
         this.batchName = batchName;
     }
 
-    public int getBatchNoOfClasses() {
+    public Integer getBatchNoOfClasses() {
         return batchNoOfClasses;
     }
 
-    public void setBatchNoOfClasses(int batchNoOfClasses) {
+    public void setBatchNoOfClasses(Integer batchNoOfClasses) {
         this.batchNoOfClasses = batchNoOfClasses;
     }
 
@@ -41,11 +41,11 @@ public class CreateBatchRequest {
         this.batchStatus = batchStatus;
     }
 
-    public double getProgramId() {
+    public Integer getProgramId() {
         return programId;
     }
 
-    public void setProgramId(double programId) {
+    public void setProgramId(Integer programId) {
         this.programId = programId;
     }
     

@@ -1,12 +1,38 @@
 @BatchModule
 Feature: Validate Batch Module
 
+Background: 
+Given Admin sets authorization to Bearer Token
 
-  Scenario Outline: Verify admin creates batch with both mandatory and optional fields
+  Scenario Outline: Verify Batch scenario "<ScenarioName>" 
     Given Admin creates POST batch data for "<ScenarioName>" from excel sheet
     When Admin sends HTTPS request to the endpoint 
     Then Admin receives expected status code from excel, validate POST batch response
 
     Examples:
-      | ScenarioName                                  |
-      | Mandatory_Optional_Valid              	      |
+      | ScenarioName                    |
+      | Mandatory_Optional_Fields       |
+      | Mandatory_Only_Fields			|
+      | Optional_Only_Fields			|
+      | ProgramName_Mismatch            |
+      | Inactive_ProgramId              |
+      | ProgramId_NotExist              |
+      | BatchName_No_Underscore         |
+      | BatchName_Hyphen                |
+      | BatchName_Char_Suffix           |
+      | BatchName_Special_Suffix        |
+      | BatchName_Too_Long              |
+      | BatchName_Too_Short             |
+      | BatchName_Duplicate             |
+      | Description_Too_Short           |
+      | Description_Too_Long            |
+      | Status_Random_Chars             |
+      | Status_Numbers                  |
+      | Status_Special                  |
+      | Classes_NonNumeric              |
+      | Classes_Too_Small               |
+      | Classes_Too_Large               |
+      | Invalid_Endpoint                |
+      | Invalid_Method                  |
+      | Invalid_ContentType             |
+      | No_Authorization                |
