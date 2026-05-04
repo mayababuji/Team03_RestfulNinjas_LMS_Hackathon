@@ -67,12 +67,12 @@
         </dependency>
 
         <!-- Source: https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
-<!--        <dependency>-->
-<!--            <groupId>io.cucumber</groupId>-->
-<!--            <artifactId>cucumber-picocontainer</artifactId>-->
-<!--            <version>7.33.0</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>7.33.0</version>
+            <scope>compile</scope>
+        </dependency>
 
         <dependency>
             <groupId>io.qameta.allure</groupId>
