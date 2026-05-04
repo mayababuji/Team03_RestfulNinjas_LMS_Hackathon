@@ -1,5 +1,7 @@
 package stepDefinitions;
 
+import io.restassured.path.json.JsonPath;
+import org.hamcrest.Matchers;
 import pojo.CreateProgramRequest;
 import pojo.CreateProgramResponse;
 import httpRequest.ProgramRequestParser;
@@ -15,6 +17,7 @@ import utils.ExcelReader;
 import utils.SharedTestData;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
@@ -45,28 +48,41 @@ public class ProgramStepDef extends SharedTestData {
         }
 
         if (!scenarioNameFeature.equalsIgnoreCase(data.get("ScenarioName"))) {
-            return; // scenario mismatch, skip
+            return;
         }
 
         // Parse request body
         programInput = ProgramRequestParser.createProgramParseData(data.get("Body"));
 
-        // Generate unique program name
-        String uniqueProgramName = programInput.getProgramName() + RandomStringUtils.randomAlphabetic(2);
-        programInput.setProgramName(uniqueProgramName);
 
-        // Store globally for Batch creation
-        SharedTestData.programName = uniqueProgramName;
+// Handle missing programName scenario
+        if (scenarioNameFeature.equalsIgnoreCase("CreateProgram_with_Missing_ProgramName")) {
+            programInput.setProgramName(null);
+        } else {
+            // Generate unique program name
+            String uniqueProgramName = programInput.getProgramName() + RandomStringUtils.randomAlphabetic(2);
+            programInput.setProgramName(uniqueProgramName);
+            SharedTestData.programName = uniqueProgramName;
+        }
 
         // Build request
         requestSpec = given().spec(requestSpec).body(programInput);
 
+        // Unified dynamic endpoint logic
+        String httpMethod = data.get("Method");
+        String endPoint = data.get("Endpoint");
+
+        if (endPoint.contains("{programId}")) {
+            endPoint = endPoint.replace("{programId}", String.valueOf(SharedTestData.programId));
+        }
+
         // Send request
         response = requestSpec.log().all()
-                .when().request(data.get("Method"), data.get("Endpoint"))
+                .when().request(httpMethod, endPoint)
                 .then().log().all()
                 .extract().response();
     }
+
 
     @Then("Admin verifies the response payload with expected output from the data sheet")
     public void admin_verifies_the_response_payload_with_expected_output_from_the_data_sheet() {
@@ -139,4 +155,73 @@ public class ProgramStepDef extends SharedTestData {
                 break;
         }
     }
+
+    @When("Admin sends GET request to get all programs for {string}")
+    public void admin_sends_get_request_to_get_all_programs_for(
+            String scenarioNameFromFeature) throws IOException {
+
+        String scenarioName = scenarioNameFromFeature;
+        data = ExcelReader.readExcelData("Program", scenarioName);
+
+        if (data != null) {
+            String dataSheetTestname = data.get("ScenarioName");
+
+            if (scenarioNameFromFeature.equalsIgnoreCase(dataSheetTestname)) {
+                requestSpec = given().spec(requestSpec);
+
+                String httpMethod = data.get("Method");
+                String endPoint = data.get("Endpoint");
+
+                response = requestSpec.log().all().when().request(httpMethod, endPoint).then().log().all().extract()
+                        .response();
+            }
+        } else {
+            throw new RuntimeException("Test data not found for: " + scenarioNameFromFeature);
+        }
+    }
+
+    @Then("Admin verifies the response payload with expected output for Get All Programs")
+    public void admin_verifies_the_response_payload_with_expected_output_for_get_all_programs() {
+
+        int expectedStatusCode = Integer.parseInt(data.get("ExpectedStatusCode"));
+
+        // Always validate status code
+        response.then().log().all().statusCode(expectedStatusCode);
+
+        // NEGATIVE CASE → do NOT validate schema or list
+        if (expectedStatusCode != 200) {
+
+            String expectedMsg = data.get("ExpectedMessage").trim();
+            String actualBody = response.getBody().asString().trim();
+
+            // For plain text responses like "Invalid endpoint"
+            Assert.assertTrue(
+                    actualBody.contains(expectedMsg),
+                    "Expected message: " + expectedMsg + " but got: " + actualBody
+            );
+
+            return;
+        }
+
+        // POSITIVE CASE → validate schema + list
+        response.then()
+                .body(matchesJsonSchemaInClasspath("schemas/Program/GetAllProgramsSchema.json"))
+                .body("", Matchers.instanceOf(List.class))
+                .body("size()", Matchers.greaterThan(0));
+
+        // Additional validations for positive case
+        JsonPath json = response.jsonPath();
+        List<Map<String, Object>> array = json.getList("$");
+
+        int programIdCount = 0;
+        for (Map<String, Object> element : array) {
+            int resProgram = (Integer) element.get("programId");
+            if (programIdList.contains(resProgram)) {
+                programIdCount++;
+            }
+        }
+
+        Assert.assertEquals(programIdCount, programIdList.size());
+    }
+
 }

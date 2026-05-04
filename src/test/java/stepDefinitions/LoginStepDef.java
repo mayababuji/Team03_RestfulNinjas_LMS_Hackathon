@@ -178,4 +178,26 @@ public class LoginStepDef extends SharedTestData {
         String endpoint = testData.get("Endpoint");
         response = requestSpec.when().post(endpoint);
     }
+
+    @When("Admin sends a GET HTTPS request for Logout  with No auth")
+    public void admin_sends_a_get_request_for_logout_with_no_auth() {
+        String endpoint = testData.get("Endpoint");
+        response = requestSpec.when().get(endpoint);
+
+    }
+
+    @When("Admin sends a POST request for Logout")
+    public void admin_sends_a_post_for_Logout() {
+        String endpoint = testData.get("Endpoint");
+        response = requestSpec.when().post(endpoint);
+    }
+
+    @When("Admin sends a GET request for Reset Password Reset_Password_Invalid_Method")
+    public void admin_sends_a_get_request_for_reset_password_reset_password_invalid_method() {
+        String endpoint = testData.get("Endpoint");
+        response = requestSpec.when().get(endpoint);
+    }
+
+
+
 }

@@ -45,9 +45,24 @@ Feature: Validate User Login Module
       | ForgotPwd_NullBody           |
       | ForgotPwd_InvalidContentType |
 
-  Scenario: Verify logout with Invalid Method
+  Scenario: Verify  if Admin logs out with invalid token
     Given Admin has the test data for "LogoutWithInvalidToken" from Excel
     When Admin sends GET for logoutInvalidMethod
+    Then Admin should receive the status code matches with Expected statuscode from excel
+
+  Scenario: Verify Admin logs out with no authorization
+    Given Admin has the test data for "Logout_With_NoAuth" from Excel with No Auth
+    When Admin sends a GET HTTPS request for Logout  with No auth
+    Then Admin should receive the status code matches with Expected statuscode from excel
+
+  Scenario: Verify Admin logs out with invalid method
+    Given Admin has the test data for "LogoutWithInvalidToken" from Excel
+    When Admin sends a POST request for Logout
+    Then Admin should receive the status code matches with Expected statuscode from excel
+
+  Scenario: Verify Admin resets password with invalid method
+    Given Admin has the test data for "Reset_Password_Invalid_Method" from Excel
+    When Admin sends a GET request for Reset Password Reset_Password_Invalid_Method
     Then Admin should receive the status code matches with Expected statuscode from excel
 
 
