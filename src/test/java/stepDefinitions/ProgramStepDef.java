@@ -116,11 +116,7 @@ public class ProgramStepDef extends SharedTestData {
         System.out.println(SharedTestData.programIdList);
         System.out.println("##########SharedTestData.programIdList in createPROGRAM##########");
 
-//        if (SharedTestData.programId == 0) {
-//            SharedTestData.programId = actualResponse.getProgramId();
-//        } else {
-//            SharedTestData.programIdList.add(actualResponse.getProgramId());
-//        }
+
         int createdId = actualResponse.getProgramId();
 
 // Always store the latest programId
@@ -151,10 +147,10 @@ public class ProgramStepDef extends SharedTestData {
                 String message = response.jsonPath().getString("message");
 
                 if (message != null) {
-                    // { "message": "..." }
+
                     Assert.assertEquals(message, expectedMsg);
                 } else {
-                    //  {{ "programName": "..."} or { "programDescription": "..." }
+
                     Map<String, String> bodyMap = response.jsonPath().getMap("");
                     String firstValue = bodyMap.values().iterator().next();
                     System.out.println("firstValuefirstValuefirstValue");
@@ -206,16 +202,16 @@ public class ProgramStepDef extends SharedTestData {
 
         int expectedStatusCode = Integer.parseInt(data.get("ExpectedStatusCode"));
 
-        // Always validate status code
+
         response.then().log().all().statusCode(expectedStatusCode);
 
-        // NEGATIVE CASE → do NOT validate schema or list
+
         if (expectedStatusCode != 200) {
 
             String expectedMsg = data.get("ExpectedMessage").trim();
             String actualBody = response.getBody().asString().trim();
 
-            // For plain text responses like "Invalid endpoint"
+
             Assert.assertTrue(
                     actualBody.contains(expectedMsg),
                     "Expected message: " + expectedMsg + " but got: " + actualBody
@@ -224,13 +220,13 @@ public class ProgramStepDef extends SharedTestData {
             return;
         }
 
-        // POSITIVE CASE → validate schema + list
+
         response.then()
                 .body(matchesJsonSchemaInClasspath("schemas/Program/GetAllProgramsSchema.json"))
                 .body("", Matchers.instanceOf(List.class))
                 .body("size()", Matchers.greaterThan(0));
 
-        // Additional validations for positive case
+
         JsonPath json = response.jsonPath();
         List<Map<String, Object>> array = json.getList("$");
 
@@ -281,7 +277,7 @@ public class ProgramStepDef extends SharedTestData {
         if (expectedStatus == 200) {
             response.then().assertThat()
                     .body(matchesJsonSchemaInClasspath("schemas/Program/GetAllByProgramID.json"));
-            // Assert that the ID in the response matches what we stored
+
             int actualId = response.jsonPath().getInt("programId");
             Assert.assertEquals(actualId, SharedTestData.programId);
         } else if (expectedStatus == 404) {
