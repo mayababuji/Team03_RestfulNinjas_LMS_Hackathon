@@ -21,6 +21,18 @@ Feature: Validate Program Module
       |CreateProgram_with_trailing_space_ProgramName                |
       | Create_NewProgram                                               |
 
+  Scenario Outline: Verify if Admin retrieves a program with valid program ID
+    Given Admin has a valid authorization token set
+    When Admin sends GET request to get program with payload for "<ScenarioName>"
+    Then Admin recieves the response payload with expected output from the excel sheet for Get Program
+
+    Scenarios:
+      | ScenarioName                          |
+      | GetProgramById_Valid_ProgramId  |
+    |GetProgramById_Invalid_Endpoint|
+    |GetProgramById_Invalid_Method|
+    |GetProgramById_Invalid_ProgramId|
+
   Scenario Outline: Verify if admin for GET All Programs
     Given Admin has a valid authorization token set
     When Admin sends GET request to get all programs for "<ScenarioName>"
@@ -31,3 +43,5 @@ Feature: Validate Program Module
       | GetPrograms_Invalid_Endpoint |
     |GetPrograms_Invalid_Method    |
     |Get_All_Programs              |
+
+

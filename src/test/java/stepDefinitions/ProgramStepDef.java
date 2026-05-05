@@ -224,4 +224,48 @@ public class ProgramStepDef extends SharedTestData {
         Assert.assertEquals(programIdCount, programIdList.size());
     }
 
+    @When("Admin sends GET request to get program with payload for {string}")
+    public void admin_sends_get_request_to_get_program_with_payload_for(
+            String scenarioNameFromFeature) throws IOException {
+        String scenario = scenarioNameFromFeature;
+        data = ExcelReader.readExcelData("Program", scenario);
+        if (data != null) {
+            String dataSheetTestname = data.get("ScenarioName");
+
+            if (scenario.equalsIgnoreCase(dataSheetTestname)) {
+
+                requestSpec = given().spec(requestSpec);
+
+                String httpMethod = data.get("Method");
+                String endPoint = data.get("Endpoint");
+                if (endPoint.contains("{programId}")) {
+                    endPoint = endPoint.replace("{programId}", String.valueOf(SharedTestData.programId));
+                }
+                response = requestSpec.log().all().when().request(httpMethod, endPoint).then().log().all().extract()
+                        .response();
+
+            }
+        } else {
+            throw new RuntimeException("Test data not found for: " + scenario);
+        }
+
+
+    }
+
+    @Then("Admin recieves the response payload with expected output from the excel sheet for Get Program")
+    public void admin_recieves_the_response_payload_with_expected_output_from_the_excel_sheet_for_get_program() {
+        int expectedStatus = Integer.parseInt(data.get("ExpectedStatusCode"));
+        String expectedMessage = data.get("ExpectedMessage");
+        response.then().log().all().statusCode(expectedStatus);
+        if (expectedStatus == 200) {
+            response.then().assertThat()
+                    .body(matchesJsonSchemaInClasspath("schemas/Program/GetAllByProgramID.json"));
+            // Assert that the ID in the response matches what we stored
+            int actualId = response.jsonPath().getInt("programId");
+            Assert.assertEquals(actualId, SharedTestData.programId);
+        } else if (expectedStatus == 404) {
+            response.then().statusLine(Matchers.containsString(expectedMessage));
+        }
+    }
+
 }
