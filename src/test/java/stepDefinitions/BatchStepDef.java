@@ -187,4 +187,29 @@ public class BatchStepDef extends SharedTestData {
 
 		System.out.println("Validated status code: " + expectedStatus);
 	}
+	
+	@Given("Admin creates GET batch by id request for {string}")
+	public void admin_creates_get_batch_by_id_request_for(String scenario) throws IOException {
+	    
+		data = ExcelReader.readExcelData("Batch", scenario);
+		
+
+		RequestSpecification spec = RequestSpec.getRequestSpec();
+
+		// Authorization handling
+		if ("None".equalsIgnoreCase(data.get("authorization"))) {
+			spec = RequestSpec.getRequestSpecWithoutAuth();
+		} else {
+			spec = RequestSpec.getRequestSpec();
+		}
+
+		System.out.println("Checking override for content type");
+		if (data.get("contentType") != null) {
+			System.out.println("Overriding content type to text/" + data.get("contentType") );
+			spec.contentType("invalid/" + data.get("contentType"));
+		}
+
+		requestSpec = given().spec(spec).basePath(data.get("Endpoint")).pathParam("batchId", String.valueOf(SharedTestData.batchId));		
+		
+	}
 }

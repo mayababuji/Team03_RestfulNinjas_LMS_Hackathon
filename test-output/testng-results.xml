@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="69" passed="64" failed="5" skipped="0">
+<testng-results ignored="0" total="70" passed="65" failed="5" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-04T23:09:06 PDT" name="Default suite" finished-at="2026-05-04T23:09:50 PDT" duration-ms="43937">
+  <suite started-at="2026-05-04T23:50:02 PDT" name="Default suite" finished-at="2026-05-04T23:50:49 PDT" duration-ms="46516">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-05-04T23:09:06 PDT" name="Default test" finished-at="2026-05-04T23:09:50 PDT" duration-ms="43937">
+    <test started-at="2026-05-04T23:50:02 PDT" name="Default test" finished-at="2026-05-04T23:50:49 PDT" duration-ms="46516">
       <class name="runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:06 PDT" name="setUpClass" finished-at="2026-05-04T23:09:06 PDT" duration-ms="595" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:02 PDT" name="setUpClass" finished-at="2026-05-04T23:50:03 PDT" duration-ms="659" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@50c9b080]]>
+                <![CDATA[org.testng.TestRunner@5927473a]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:06 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:10 PDT" duration-ms="3489" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:03 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:07 PDT" duration-ms="3456" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,7 +37,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:10 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:10 PDT" duration-ms="535" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:07 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:07 PDT" duration-ms="574" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -53,7 +53,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:10 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:12 PDT" duration-ms="1433" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:07 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:09 PDT" duration-ms="1458" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -69,7 +69,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:12 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:12 PDT" duration-ms="515" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:09 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:09 PDT" duration-ms="527" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -85,7 +85,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:12 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:13 PDT" duration-ms="1091" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:09 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:10 PDT" duration-ms="949" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -101,7 +101,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:13 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:14 PDT" duration-ms="502" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:10 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:11 PDT" duration-ms="500" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -117,7 +117,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:14 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:15 PDT" duration-ms="508" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:11 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:11 PDT" duration-ms="507" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -133,7 +133,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:15 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:15 PDT" duration-ms="543" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:11 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:12 PDT" duration-ms="539" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -149,7 +149,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:15 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:16 PDT" duration-ms="584" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:12 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:12 PDT" duration-ms="589" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -165,7 +165,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:16 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:16 PDT" duration-ms="595" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:12 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:13 PDT" duration-ms="512" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -181,55 +181,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:16 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:17 PDT" duration-ms="511" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Verify User Sign In with No Auth"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Validate User Login Module"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:17 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:17 PDT" duration-ms="551" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Verify User Sign In with No Auth"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Validate User Login Module"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:17 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:18 PDT" duration-ms="527" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Verify User Sign In with No Auth"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Validate User Login Module"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:18 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:18 PDT" duration-ms="569" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:13 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:13 PDT" duration-ms="558" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -245,13 +197,13 @@
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[
-Expected to find: [password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space] 
-But returned: [{"password":"Password is mandatory","userLoginEmailId":"EmailId is mandatory"}] expected [true] but found [false]]]>
+Expected to find: [Password is mandatory] 
+But returned: [{"password":"password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space"}] expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: 
-Expected to find: [password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space] 
-But returned: [{"password":"Password is mandatory","userLoginEmailId":"EmailId is mandatory"}] expected [true] but found [false]
+Expected to find: [Password is mandatory] 
+But returned: [{"password":"password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space"}] expected [true] but found [false]
 at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1590)
 at org.testng.Assert.assertTrue(Assert.java:57)
@@ -263,7 +215,55 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:18 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:19 PDT" duration-ms="529" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:13 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:14 PDT" duration-ms="550" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify User Sign In with No Auth"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validate User Login Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:14 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:14 PDT" duration-ms="494" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify User Sign In with No Auth"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validate User Login Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:14 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:15 PDT" duration-ms="477" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify User Sign In with No Auth"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validate User Login Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:15 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:15 PDT" duration-ms="587" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -279,7 +279,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:19 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:20 PDT" duration-ms="1254" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:15 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:16 PDT" duration-ms="1037" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -295,7 +295,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:20 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:21 PDT" duration-ms="513" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:16 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:17 PDT" duration-ms="522" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -311,7 +311,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:21 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:21 PDT" duration-ms="493" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:17 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:18 PDT" duration-ms="559" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -327,7 +327,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:21 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:22 PDT" duration-ms="506" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:18 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:18 PDT" duration-ms="544" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -343,7 +343,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:22 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:22 PDT" duration-ms="481" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:18 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:19 PDT" duration-ms="505" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -359,7 +359,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:22 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:23 PDT" duration-ms="496" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:19 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:19 PDT" duration-ms="485" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -375,7 +375,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:23 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:23 PDT" duration-ms="505" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:19 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:20 PDT" duration-ms="532" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -391,7 +391,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:23 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:24 PDT" duration-ms="564" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:20 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:20 PDT" duration-ms="498" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -407,7 +407,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:24 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:24 PDT" duration-ms="470" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:20 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:21 PDT" duration-ms="550" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -423,7 +423,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:24 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:25 PDT" duration-ms="538" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:21 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:21 PDT" duration-ms="526" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -439,7 +439,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:25 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:25 PDT" duration-ms="677" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:21 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:22 PDT" duration-ms="590" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -455,7 +455,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:25 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:26 PDT" duration-ms="500" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:22 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:22 PDT" duration-ms="595" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -471,7 +471,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:26 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:26 PDT" duration-ms="505" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:22 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:23 PDT" duration-ms="556" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -487,7 +487,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:26 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:27 PDT" duration-ms="499" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:23 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:24 PDT" duration-ms="800" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -503,7 +503,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:27 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:28 PDT" duration-ms="602" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:24 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:25 PDT" duration-ms="758" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -519,7 +519,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:28 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:28 PDT" duration-ms="518" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:25 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:25 PDT" duration-ms="564" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -535,7 +535,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:28 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:29 PDT" duration-ms="500" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:25 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:26 PDT" duration-ms="652" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -551,7 +551,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:29 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:29 PDT" duration-ms="571" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:26 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:26 PDT" duration-ms="629" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -567,7 +567,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:29 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:30 PDT" duration-ms="587" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:26 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:27 PDT" duration-ms="785" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -583,7 +583,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:30 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:30 PDT" duration-ms="502" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:27 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:28 PDT" duration-ms="769" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -599,7 +599,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:30 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:31 PDT" duration-ms="532" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:28 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:29 PDT" duration-ms="763" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -615,7 +615,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:31 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:31 PDT" duration-ms="475" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:29 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:29 PDT" duration-ms="605" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -631,7 +631,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:31 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:32 PDT" duration-ms="530" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:29 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:30 PDT" duration-ms="715" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -647,7 +647,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:32 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:33 PDT" duration-ms="1304" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:30 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:32 PDT" duration-ms="1950" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -663,7 +663,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:33 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:34 PDT" duration-ms="594" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:32 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:33 PDT" duration-ms="700" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -679,7 +679,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:34 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:34 PDT" duration-ms="511" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:33 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:33 PDT" duration-ms="539" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -695,7 +695,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:34 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:35 PDT" duration-ms="506" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:33 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:34 PDT" duration-ms="495" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -711,7 +711,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:35 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:35 PDT" duration-ms="541" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:34 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:34 PDT" duration-ms="523" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -727,7 +727,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:35 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:36 PDT" duration-ms="498" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:34 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:35 PDT" duration-ms="473" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -743,7 +743,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:36 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:36 PDT" duration-ms="485" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:35 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:35 PDT" duration-ms="498" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -759,7 +759,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:36 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:37 PDT" duration-ms="518" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:35 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:36 PDT" duration-ms="579" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -775,7 +775,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:37 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:37 PDT" duration-ms="516" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:36 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:36 PDT" duration-ms="521" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -791,7 +791,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:37 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:38 PDT" duration-ms="520" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:36 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:37 PDT" duration-ms="505" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -807,7 +807,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:38 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:38 PDT" duration-ms="473" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:37 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:37 PDT" duration-ms="484" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -823,7 +823,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:38 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:39 PDT" duration-ms="466" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:37 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:38 PDT" duration-ms="545" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -839,7 +839,7 @@ at ✽.the response should match the expected validation message from Excel(file
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:39 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:39 PDT" duration-ms="600" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:38 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:38 PDT" duration-ms="547" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -879,7 +879,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:39 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:40 PDT" duration-ms="494" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:38 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:39 PDT" duration-ms="453" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -895,7 +895,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:40 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:40 PDT" duration-ms="539" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:39 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:39 PDT" duration-ms="559" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -935,7 +935,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:40 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:41 PDT" duration-ms="491" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:39 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:40 PDT" duration-ms="498" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -975,7 +975,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:41 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:41 PDT" duration-ms="511" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:40 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:40 PDT" duration-ms="491" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -991,7 +991,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:41 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:42 PDT" duration-ms="499" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:40 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:41 PDT" duration-ms="484" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1007,7 +1007,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:42 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:42 PDT" duration-ms="478" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:41 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:41 PDT" duration-ms="503" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1023,7 +1023,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:42 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:43 PDT" duration-ms="483" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:41 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:42 PDT" duration-ms="509" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1039,7 +1039,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:43 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:43 PDT" duration-ms="542" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:42 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:42 PDT" duration-ms="468" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1055,7 +1055,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:43 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:44 PDT" duration-ms="566" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:42 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:43 PDT" duration-ms="482" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1071,7 +1071,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:44 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:44 PDT" duration-ms="492" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:43 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:43 PDT" duration-ms="545" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1087,7 +1087,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:44 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:45 PDT" duration-ms="640" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:43 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:44 PDT" duration-ms="492" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1103,7 +1103,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:45 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:46 PDT" duration-ms="559" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:44 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:44 PDT" duration-ms="535" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1119,7 +1119,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:46 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:46 PDT" duration-ms="501" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:44 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:45 PDT" duration-ms="489" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1135,7 +1135,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:46 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:47 PDT" duration-ms="1051" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:45 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:46 PDT" duration-ms="1086" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1151,7 +1151,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:47 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:48 PDT" duration-ms="471" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:46 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:46 PDT" duration-ms="455" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1167,7 +1167,7 @@ at ✽.Admin receives expected status code from excel, validate POST batch respo
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:48 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:49 PDT" duration-ms="1089" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:46 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:47 PDT" duration-ms="920" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -1207,7 +1207,7 @@ at ✽.Admin receives expected status code from Excel(file:///C:/Users/saphi/ecl
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:49 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:49 PDT" duration-ms="444" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:47 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:48 PDT" duration-ms="469" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1223,7 +1223,7 @@ at ✽.Admin receives expected status code from Excel(file:///C:/Users/saphi/ecl
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:49 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:09:50 PDT" duration-ms="476" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:48 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:48 PDT" duration-ms="559" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1239,7 +1239,23 @@ at ✽.Admin receives expected status code from Excel(file:///C:/Users/saphi/ecl
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:09:50 PDT" name="tearDownClass" finished-at="2026-05-04T23:09:50 PDT" duration-ms="24" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:48 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-04T23:50:49 PDT" duration-ms="504" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify GET batch by id "Get_Batch_By_Id_Valid""]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Validate Batch Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestRunner@55b0dcab]" started-at="2026-05-04T23:50:49 PDT" name="tearDownClass" finished-at="2026-05-04T23:50:49 PDT" duration-ms="24" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
