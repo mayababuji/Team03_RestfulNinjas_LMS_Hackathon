@@ -31,6 +31,10 @@ Feature: Validate Program Module
       |UpdateProgramById_with_Valid_ProgramName  |
       |UpdateProgramByID_InvalidMethod|
       |UpdateProgramById_Invalid_Endpoint|
+    |UpdateProgramById_InvalidProgramId|
+    |UpdateProgramById_ProgramName_LessThan_4_Characters|
+    |UpdateProgramById_ProgramDescription_LessThan_4_Characters|
+
   Scenario Outline: Verify if Admin retrieves a program with valid program ID
     Given Admin has a valid authorization token set
     When Admin sends GET request to get program with payload for "<ScenarioName>"
