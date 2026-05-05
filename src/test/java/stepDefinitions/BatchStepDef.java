@@ -212,4 +212,110 @@ public class BatchStepDef extends SharedTestData {
 		requestSpec = given().spec(spec).basePath(data.get("Endpoint")).pathParam("batchId", String.valueOf(SharedTestData.batchId));		
 		
 	}
+	
+	@Given("Admin creates GET batch by name request for {string}")
+	public void admin_creates_get_batch_by_name_request_for(String scenario) throws IOException {
+	    
+		data = ExcelReader.readExcelData("Batch", scenario);		
+
+		RequestSpecification spec = RequestSpec.getRequestSpec();
+
+		// Authorization handling
+		if ("None".equalsIgnoreCase(data.get("authorization"))) {
+			spec = RequestSpec.getRequestSpecWithoutAuth();
+		} else {
+			spec = RequestSpec.getRequestSpec();
+		}
+
+		System.out.println("Checking override for content type");
+		if (data.get("contentType") != null) {
+			System.out.println("Overriding content type to text/" + data.get("contentType") );
+			spec.contentType("invalid/" + data.get("contentType"));
+		}
+
+		requestSpec = given().spec(spec).basePath(data.get("Endpoint")).pathParam("batchName", (SharedTestData.programName + data.get("batchName")));		
+		
+	}
+	
+	@Given("Admin creates GET batch by programid request for {string}")
+	public void admin_creates_get_batch_by_programid_request_for(String scenario) throws IOException {
+	    
+		data = ExcelReader.readExcelData("Batch", scenario);		
+
+		RequestSpecification spec = RequestSpec.getRequestSpec();
+
+		// Authorization handling
+		if ("None".equalsIgnoreCase(data.get("authorization"))) {
+			spec = RequestSpec.getRequestSpecWithoutAuth();
+		} else {
+			spec = RequestSpec.getRequestSpec();
+		}
+
+		System.out.println("Checking override for content type");
+		if (data.get("contentType") != null) {
+			System.out.println("Overriding content type to text/" + data.get("contentType") );
+			spec.contentType("invalid/" + data.get("contentType"));
+		}
+
+		requestSpec = given().spec(spec).basePath(data.get("Endpoint")).pathParam("programId", String.valueOf(SharedTestData.programId));		
+		
+	}
+	
+	@Given("Admin creates PUT batch by id request for {string}")
+	public void admin_creates_put_batch_by_id_request_for(String scenario) throws IOException {
+	    
+		data = ExcelReader.readExcelData("Batch", scenario);		
+
+		RequestSpecification spec = RequestSpec.getRequestSpec();
+
+		// Authorization handling
+		if ("None".equalsIgnoreCase(data.get("authorization"))) {
+			spec = RequestSpec.getRequestSpecWithoutAuth();
+		} else {
+			spec = RequestSpec.getRequestSpec();
+		}
+
+		System.out.println("Checking override for content type");
+		if (data.get("contentType") != null) {
+			System.out.println("Overriding content type to text/" + data.get("contentType") );
+			spec.contentType("invalid/" + data.get("contentType"));
+		}
+		
+		// Build request body
+		CreateBatchRequest batchData = new CreateBatchRequest();
+		batchData.setBatchStatus(data.get("batchStatus"));
+		batchData.setBatchNoOfClasses(Integer.parseInt(data.get("batchNoOfClasses")));
+		batchData.setBatchName(SharedTestData.batchName);
+		batchData.setProgramId(SharedTestData.programId);
+
+		requestSpec = given().spec(spec).body(batchData).basePath(data.get("Endpoint")).pathParam("batchId", String.valueOf(SharedTestData.batchId));		
+		
+	}
+	
+	@Given("Admin creates DELETE batch by id request for {string}")
+	public void admin_creates_delete_batch_by_id_request_for(String scenario) throws IOException {
+	    
+		data = ExcelReader.readExcelData("Batch", scenario);
+		
+
+		RequestSpecification spec = RequestSpec.getRequestSpec();
+
+		// Authorization handling
+		if ("None".equalsIgnoreCase(data.get("authorization"))) {
+			spec = RequestSpec.getRequestSpecWithoutAuth();
+		} else {
+			spec = RequestSpec.getRequestSpec();
+		}
+
+		System.out.println("Checking override for content type");
+		if (data.get("contentType") != null) {
+			System.out.println("Overriding content type to text/" + data.get("contentType") );
+			spec.contentType("invalid/" + data.get("contentType"));
+		}
+
+		requestSpec = given().spec(spec).basePath(data.get("Endpoint")).pathParam("id", String.valueOf(SharedTestData.batchId));		
+		
+	}
+	
+	
 }
