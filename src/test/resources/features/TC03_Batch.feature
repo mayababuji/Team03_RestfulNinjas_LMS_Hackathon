@@ -53,3 +53,12 @@ Rule: Create Batch (POST)
 	| Get_All_Invalid_ContentType	|
   	| Get_All_No_Auth				|
   	| Get_All_Invalid_Method		|
+  	
+  Scenario Outline: Verify GET batch by id "<ScenarioName>"
+  Given Admin creates GET batch by id request for "<ScenarioName>"
+  When Admin sends HTTPS request to the endpoint
+  Then Admin receives expected status code from Excel
+  
+  Examples:
+  	| ScenarioName	 						|
+  	| Get_Batch_By_Id_Valid					| 	
