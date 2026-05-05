@@ -21,6 +21,16 @@ Feature: Validate Program Module
       |CreateProgram_with_trailing_space_ProgramName                |
       | Create_NewProgram                                               |
 
+  Scenario Outline: Verify if Admin  updates a ProgramByProgramId
+    Given Admin has a valid authorization token set
+    When Admin sends PUT request to update programById with payload for "<ScenarioName>"
+    Then Admin verifies the response payload for Update Program ByProgramId
+
+    Examples:
+      | ScenarioName                                                       |
+      |UpdateProgramById_with_Valid_ProgramName  |
+      |UpdateProgramByID_InvalidMethod|
+      |UpdateProgramById_Invalid_Endpoint|
   Scenario Outline: Verify if Admin retrieves a program with valid program ID
     Given Admin has a valid authorization token set
     When Admin sends GET request to get program with payload for "<ScenarioName>"
@@ -43,5 +53,17 @@ Feature: Validate Program Module
       | GetPrograms_Invalid_Endpoint |
     |GetPrograms_Invalid_Method    |
     |Get_All_Programs              |
+
+  Scenario Outline: Verify if Admin retrieves all programs users
+    Given Admin has a valid authorization token set
+    When Admin sends GET request to get all programs for users with "<ScenarioName>"
+    Then Admin verifies the response payload with expected output for Get All Programs with Users
+
+    Examples:
+      | ScenarioName                                  |
+      | GetAllProgramsForUsers_Invalid_Endpoint |
+      | GetAllProgramsWithUsers_Valid_Endpoint               |
+      | GetPrograms_Invalid_Method   |
+
 
 
