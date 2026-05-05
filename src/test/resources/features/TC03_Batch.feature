@@ -4,7 +4,9 @@ Feature: Validate Batch Module
 Background: 
 Given Admin sets authorization to Bearer Token
 
-  Scenario Outline: Verify Batch scenario "<ScenarioName>" 
+Rule: Create Batch (POST)
+
+  Scenario Outline: Verify POST Batch creation "<ScenarioName>" 
     Given Admin creates POST batch data for "<ScenarioName>" from excel sheet
     When Admin sends HTTPS request to the endpoint 
     Then Admin receives expected status code from excel, validate POST batch response
@@ -36,3 +38,18 @@ Given Admin sets authorization to Bearer Token
       | Invalid_Method                  |
       | Invalid_ContentType             |
       | No_Authorization                |
+      
+  Rule: Get all batches(GET)
+  
+  Scenario Outline: Verify GET all batches "<ScenarioName>"
+  Given Admin creates GET request for "<ScenarioName>"
+  When Admin sends HTTPS request to the endpoint
+  Then Admin receives expected status code from Excel
+  
+  Examples:
+  	| ScenarioName	 				|
+  	| Get_All_Valid					|
+  	| Get_All_Invalid_EP			|
+	| Get_All_Invalid_ContentType	|
+  	| Get_All_No_Auth				|
+  	| Get_All_Invalid_Method		|
