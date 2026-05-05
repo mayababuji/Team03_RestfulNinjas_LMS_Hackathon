@@ -64,6 +64,7 @@ public class BatchStepDef extends SharedTestData {
 		// Override program name from Excel if exists, otherwise take it from
 		// SharedTestData
 		String programName = data.get("programName");
+		System.out.println(programName);
 		if (programName == null) {
 			batchData.setprogramName(SharedTestData.programName);
 		}
@@ -147,10 +148,43 @@ public class BatchStepDef extends SharedTestData {
 			String expectedBatchName = (String) scenarioContext.getContext("BATCH_NAME");
 			Assert.assertEquals(batchResponse.getBatchName(), expectedBatchName,
 					"Batch Name mismatch in positive scenario");
-		}
-
-		else {
+		} else {
 			System.out.println("Skipping schema validation for negative scenario: " + data.get("ScenarioName"));
 		}
+	}
+
+	@Given("Admin creates GET request for {string}")
+	public void admin_creates_get_request_for(String scenario) throws IOException {
+
+		data = ExcelReader.readExcelData("Batch", scenario);
+
+		RequestSpecification spec = RequestSpec.getRequestSpec();
+
+		// Authorization handling
+		if ("None".equalsIgnoreCase(data.get("authorization"))) {
+			spec = RequestSpec.getRequestSpecWithoutAuth();
+		} else {
+			spec = RequestSpec.getRequestSpec();
+		}
+
+		System.out.println("Checking override for content type");
+		if (data.get("contentType") != null) {
+			System.out.println("Overriding content type to text/" + data.get("contentType") );
+			spec.contentType("invalid/" + data.get("contentType"));
+		}
+
+		requestSpec = given().spec(spec).basePath(data.get("Endpoint"));
+		
+	}
+
+	@Then("Admin receives expected status code from Excel")
+	public void admin_receives_expected_status_code_from_excel() {
+
+		int expectedStatus = Integer.parseInt(data.get("expectedStatus"));
+
+		// Validate status code
+		response.then().log().all().statusCode(expectedStatus);
+
+		System.out.println("Validated status code: " + expectedStatus);
 	}
 }
